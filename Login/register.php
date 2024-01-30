@@ -67,6 +67,21 @@ input[type="submit"]:hover {
         width: 90%;
     }
 }
+
+.back-btn {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.back-btn a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.back-btn a:hover {
+    text-decoration: underline;
+}
         </style>
 
 <?php
@@ -120,6 +135,9 @@ $conn->close();
 
             <input type="submit" value="Register">
         </form>
+        <div class="back-btn">
+        <a href="login.php">Back to Login</a>
+    </div>
     </div>
 
 </body>

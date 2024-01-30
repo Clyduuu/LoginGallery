@@ -2,7 +2,6 @@
 <a href="Profile.php">Profile</a>
 <a href="Gallery.php">Gallery</a>
 <a href="Contact.php">Contact Us</a>
-<a href="register.php">Register</a>
 <a href="logout.php">Log Out</a>
 <style>
     /* Reset some default styles */

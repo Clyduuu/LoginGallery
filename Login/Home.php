@@ -17,7 +17,7 @@ body, h1, h2, p, header, section, footer {
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
-    background-image: url("cat.jpg");
+    background-image: url("star.gif");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -63,7 +63,7 @@ footer {
         </style>
 
     <header>
-        <h1>Good Morning</h1>
+        <h1>Astro Boy Gallery</h1>
         <?php include 'navbar.php';?>
     </header>
 </body>
