@@ -1,94 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/styles.css">
     <style>
-        /* Reset some default styles */
-body, h2, form {
-    margin: 0;
-    padding: 0;
-}
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    
-}
+        .login-container {
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 550px;
+            text-align: center;
+        }
 
-.login-container {
-    width: 300px;
-    margin: 100px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+        h2 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
 
-h2 {
-    text-align: center;
-    color: #333;
-}
+        form {
+            display: flex;
+            flex-direction: column;
+        }
 
-form {
-    margin-top: 20px;
-}
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #555;
-}
+        input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
 
-input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    box-sizing: border-box;
-}
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            cursor: pointer;
+        }
 
-input[type="submit"] {
-    background-color: #27ae60;
-    color: #fff;
-    cursor: pointer;
-    height: 50px;
-}
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function validateUsername() {
+            var usernameInput = document.getElementById("username");
+            var usernameValue = usernameInput.value;
 
-input[type="submit"]:hover {
-    background-color: #2980b9;
-    
-}
+            // Check for special characters using a regular expression
+            var regex = /^[a-zA-Z0-9]+$/;
+            if (!regex.test(usernameValue)) {
+                alert("Username should not contain special characters.");
+                usernameInput.value = ""; // Clear the input
+                return false;
+            }
 
-/* Responsive design */
-@media (max-width: 400px) {
-    .login-container {
-        width: 90%;
-    }
-}
+            return true;
+        }
+    </script>
+</head>
 
-        </style>
+<body>
     <div class="login-container">
         <h2>Login</h2>
-        
-        <form action="Home.php" method="post">
+        <form action="Home.php" method="post" onsubmit="return validateUsername()">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
-            
+
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-            
-            <form action="Home.php">
+
             <input type="submit" value="Login">
-            </form>
-            <form action="Register.php">
+        </form>
+
+        <form action="Register.php">
             <input type="submit" value="Register">
-            </form>
         </form>
     </div>
-
 </body>
+
 </html>
